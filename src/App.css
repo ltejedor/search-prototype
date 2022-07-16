@@ -108,6 +108,11 @@
   margin-top: 10px;
 }
 
+.movie h2 {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
 
 input[type="submit"] {
   padding: 5px;
@@ -149,4 +154,12 @@ input[type="submit"]:hover {
     max-width: 100%;
     margin: auto;
   }
+}
+
+.movie .true.individual-view {
+  display: none;
+}
+
+.movie .false.group-view {
+  display: none;
 }
