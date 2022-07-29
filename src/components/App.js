@@ -28,6 +28,7 @@ function App() {
   }
 
   const reloadMovies = allData => {
+    setErrorMessage(null);
     setShowGroup(true);
     setMovies(content["search"]);
   }
