@@ -20,11 +20,12 @@ const Search = (props) => {
   return (
     <form className="search">
       <input
+        placeholder="What is self-knowing?"
         value={searchValue}
         onChange={handleSearchInputChanges}
         type="text"
       />
-      <input onClick={ callSearchFunction } type="submit" value="SEARCH" />
+      <input onClick={ callSearchFunction } type="submit" value="Search" />
     </form>
   );
 }

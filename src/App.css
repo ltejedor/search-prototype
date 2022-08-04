@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  height: 100%;
 }
 
 .App-logo {
@@ -11,16 +12,6 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .App-link {
@@ -41,16 +32,22 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  height: 70px;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
-  padding: 20px;
-  cursor: pointer;
+  color: #15131D;
+  padding: 20px 20px 10px;
+  text-align: left;
+}
+
+.App-header h2 {
+  font-size: 16px;
+}
+
+.App-header h2 span {
+  font-weight: 400;
 }
 
 .spinner {
@@ -60,6 +57,16 @@
 
 .App-intro {
   font-size: large;
+  color: white;
+}
+
+.white {
+  color: #fff;
+}
+
+.answer.false-group-size {
+  width: 100%;
+  min-width: 100%;
 }
 
 /* new css for movie component */
@@ -68,10 +75,23 @@
   box-sizing: border-box;
 }
 
+.Container {
+  background-color: #15131D;
+  height: 100%;
+}
+
 .movies {
+  width: 80%;
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+}
+
+@media only screen and (max-width: 900px) {
+  .movies .answer {
+    width: 50%;
+  }
 }
 
 .App-header h2 {
@@ -88,9 +108,42 @@
   margin: 0 10px 30px 10px;
 }
 
-.movie {
+.answer {
   padding: 5px 25px 10px 25px;
-  max-width: 25%;
+  width: 33%;
+  text-align: left;
+}
+
+.full-control .timeline {
+  position: absolute;
+  top: 0;
+  right: 22px;
+  color: #49494A;
+  font-size: 10px;
+}
+
+.title-display .open-icon {
+  position: absolute;
+  right: 10px;
+  opacity: 0;
+  transition: opacity .2s ease-out;
+}
+
+.title-display:hover .open-icon {
+  opacity: 1;
+}
+
+.title-display .open-icon svg {
+  width: 25px;
+  height: 25px;
+}
+
+.answer .title-display {
+  background: linear-gradient(153.23deg, #B59FDC 16.76%, #E7C590 76.84%);
+  border-radius: 15px 15px 0 0;
+  padding: 10px 25px 3px;
+  position: relative;
+  cursor: pointer;
 }
 
 .errorMessage {
@@ -99,8 +152,9 @@
   color: rgb(161, 15, 15);
 }
 
-
 .search {
+  padding: 50px;
+  width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -108,58 +162,105 @@
   margin-top: 10px;
 }
 
-.movie h2 {
-  color: blue;
-  text-decoration: underline;
+.seek {
+  width: 56%;
+  display: inline-block;
+  margin-left: 18px;
+}
+
+.slider-container, .slider-container input {
+  width: 100%;
+}
+
+.answer h2 {
+  color: #15131D;
   cursor: pointer;
+  font-family: "Lora", serif;
+}
+
+.answer .full-control {
+  background-color: #fff;
+  border-radius: 0 0 15px 15px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.full-control .button {
+  border: 0;
+  background-color: #15131D;
+  color: #fff;
+  height: 50px;
+  width: 55px;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-left: 22px;
+  margin-top: 15px;
 }
 
 input[type="submit"] {
   padding: 5px;
-  background-color: transparent;
   color: black;
-  border: 1px solid black;
-  width: 80px;
-  margin-left: 5px;
+  border: none;
+  background-color: #B59FDC;
   cursor: pointer;
+  border-radius: 0 5px 5px 0;
+  width: 9%;
+  margin-right: 1%;
 }
 
 
 input[type="submit"]:hover {
-  background-color: #282c34;
-  color: antiquewhite;
+  background-color: #9D7CD7;
 }
 
 
 .search > input[type="text"]{
-  width: 40%;
+  width: 72%;
   min-width: 170px;
+  padding: 13px 10px;
+  font-size: 1em;
+  border-radius: 5px 0 0 5px;
+  border: 0px;
+}
+
+
+@media screen and (min-width: 2000px){
+  .movies .answer {
+    width: 25%;
+  }
+}
+
+@media screen and (min-width: 2600px){
+  .movies .answer {
+    width: 20%;
+  }
 }
 
 @media screen and (min-width: 694px) and (max-width: 915px) {
-  .movie {
-    max-width: 33%;
+  .answer {
+    max-width: 50%;
   }
 }
 
 @media screen and (min-width: 652px) and (max-width: 693px) {
-  .movie {
+  .answer {
     max-width: 50%;
   }
 }
 
 
 @media screen and (max-width: 651px) {
-  .movie {
+  .movies .answer {
+    width: 100%;
     max-width: 100%;
     margin: auto;
   }
 }
 
-.movie .true.individual-view {
+.answer .true.individual-view {
   display: none;
 }
 
-.movie .false.group-view {
+.answer .false.group-view {
   display: none;
 }
