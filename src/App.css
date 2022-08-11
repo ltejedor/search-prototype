@@ -80,7 +80,7 @@
   height: 100%;
 }
 
-.movies {
+.lectures {
   width: 80%;
   margin: 0 auto;
   display: flex;
@@ -89,7 +89,7 @@
 }
 
 @media only screen and (max-width: 900px) {
-  .movies .answer {
+  .lectures .answer {
     width: 50%;
   }
 }
@@ -225,13 +225,13 @@ input[type="submit"]:hover {
 
 
 @media screen and (min-width: 2000px){
-  .movies .answer {
+  .lectures .answer {
     width: 25%;
   }
 }
 
 @media screen and (min-width: 2600px){
-  .movies .answer {
+  .lectures .answer {
     width: 20%;
   }
 }
@@ -250,7 +250,7 @@ input[type="submit"]:hover {
 
 
 @media screen and (max-width: 651px) {
-  .movies .answer {
+  .lectures .answer {
     width: 100%;
     max-width: 100%;
     margin: auto;
