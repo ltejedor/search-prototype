@@ -78,14 +78,77 @@
 .Container {
   background-color: #15131D;
   height: 100%;
+  text-align: left;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .lectures {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+}
+
+.false-group-size .title-display .open-icon{
+  display: none;
+}
+
+.answer.false-group-size .title-display{
+  color: #fff;
+  cursor: default;
+  background: none;
+  padding-left: 0;
+}
+
+.backBtn {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  left: 0;
+  font-size: 1.1em;
+}
+
+.backBtn:hover {
+  text-decoration: underline;
+}
+
+.answer.false-group-size .seek{
+  width: 80%;
+}
+
+.lecture-content {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 35px 40px;
+}
+
+.answer.false-group-size h2 {
+  color: #fff;
+  cursor: default;
+  font-size: 1.8em;
+}
+
+.answer.false-group-size .full-control{
+  border-radius: 15px;
+}
+
+.lecture-content.individual-view li {
+    list-style: none;
+    margin-bottom: 15px;
+}
+
+.lecture-content.individual-view .speaker {
+  font-weight: 800;
+  display: inline-block;
+  width: 17%;
+}
+
+.lecture-content.individual-view .content {
+  display: inline-block;
+  width: 81%;
+  vertical-align: top;
 }
 
 @media only screen and (max-width: 900px) {
@@ -153,7 +216,7 @@
 }
 
 .search {
-  padding: 50px;
+  padding: 50px 0;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -204,7 +267,7 @@ input[type="submit"] {
   background-color: #B59FDC;
   cursor: pointer;
   border-radius: 0 5px 5px 0;
-  width: 9%;
+  width: 13%;
   margin-right: 1%;
 }
 
@@ -215,7 +278,7 @@ input[type="submit"]:hover {
 
 
 .search > input[type="text"]{
-  width: 72%;
+  width: 79%;
   min-width: 170px;
   padding: 13px 10px;
   font-size: 1em;

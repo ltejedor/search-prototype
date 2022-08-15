@@ -4,10 +4,24 @@ import Player from "./Player";
 import { MdOpenInNew } from "react-icons/md";
 
 const Lecture = (props) => {
+
   const onTrigger = () => {
     props.parentCallback([props.lecture.display_question])
     console.log(props.showGroup)
   }
+
+  function removeName(str) {
+    const indexOfSpace = str.indexOf(' ');
+    if (indexOfSpace === -1) {
+      return '';
+    }
+
+    return str.substring(indexOfSpace + 1);
+  }
+
+  const listItems = props.lecture.content.map((content, index) =>
+    <li key={index}><span className="speaker">{content.replace(/ .*/,'')}</span> <span className="content">{removeName(content)}</span></li>
+  );
 
   function convertTime(current_time) {
     let a = current_time.split(':');
@@ -18,7 +32,7 @@ const Lecture = (props) => {
   dateFormatted = String(dateFormatted);
   let timeFormatted = convertTime(String(props.lecture.start_time));
   let display_name = String(props.lecture.display_name);
-  display_name = display_name.split(":")[0];
+  display_name = display_name.split("$")[0];
 
   return (
     <div className = { `answer ${props.showGroup}-group-size` }>
@@ -32,7 +46,9 @@ const Lecture = (props) => {
 
       {/*<p><audio controls><source src={`https://dharmaseed.org${props.lecture.url}#t=0${props.lecture.human_start_time}`} type="audio/mpeg" preload="none" /></audio></p>*/}
       {/*<p className={` ${props.showGroup} group-view`}>{ props.lecture.content.substring(0, 350) }...</p>*/}
-      <p className={` ${props.showGroup} individual-view white`}>{ props.lecture.content }</p>
+
+      <ul className={` ${props.showGroup} individual-view lecture-content`}>{listItems}</ul>
+
     </div>
   );
 };
