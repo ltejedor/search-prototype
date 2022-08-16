@@ -15,6 +15,7 @@ function App() {
   const [errorMessage, setErrorMessage] = useState(null);
   const [showGroup, setShowGroup] = useState(true);
   const [searchTerm, setSearchTerm] = useState(null);
+  const [searchKey, setSearchKey] = useState(1);
 
   useEffect(() => {
     setLectures(content["search"]);
@@ -34,6 +35,7 @@ function App() {
   }
 
   const reloadLectures = allData => {
+    setSearchKey(searchKey + 1)
     setSearchTerm(null)
     setBackBtn(false);
     setErrorMessage(null);
@@ -65,22 +67,23 @@ function App() {
 
     setSearchTerm(searchValue)
 
-    console.log(search_content)
-
     if(search_content.length > 0) {
       setLectures(search_content);
       setLoading(false);
     } else {
-      setErrorMessage("No talks with that keyword available");
+      setErrorMessage("No talks with that keyword available.");
       setLoading(false);
     }
   }
 
   return (
    <div className="App">
-    <Header title="Larry Rosenberg" tagline="Four Decades of Wisdom" />
+     <header onClick={reloadLectures} className = "App-header">
+       <h2><span>Larry Rosenberg: <span className="tagline">Four Decades of Wisdom</span></span></h2>
+     </header>
+
     <div className="Container">
-      {(showGroup) ? <Search search={search} /> : <p></p> }
+      {(showGroup) ? <Search key={searchKey} search={search} /> : <p></p> }
       {(searchTerm) ? <p className="white">Search Larry's Answers for: {searchTerm}</p> : <p></p> }
 
       {(backBtn) ? <p className="white backBtn" onClick={ reloadLectures }><BiArrowBack/> Back to All</p> : <p></p> }

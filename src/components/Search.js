@@ -8,19 +8,25 @@ const Search = (props) => {
   }
 
   const resetInputField = () => {
+    console.log("workinggg")
     setSearchValue("")
+  }
+
+  const resetSearchValue = () => {
+    searchValue = ""
   }
 
   const callSearchFunction = (e) => {
     e.preventDefault();
     props.search(searchValue);
-    resetInputField();
+    //resetInputField();
   }
 
   return (
     <form className="search">
       <input
-        placeholder="What is self-knowing?"
+        id="search-input"
+        placeholder="Search keywords: self-knowing, fear, clarity"
         value={searchValue}
         onChange={handleSearchInputChanges}
         type="text"

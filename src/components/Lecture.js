@@ -41,6 +41,7 @@ const Lecture = (props) => {
         <h2>{ props.lecture.display_question }</h2>
         <p>From { display_name }</p>
         <p>Recorded { dateFormatted }</p>
+        <p>Question starts at { props.lecture.start_time }</p>
       </div>
       <Player startTime = {timeFormatted} recording={`https://dharmaseed.org${props.lecture.url}`} />
 

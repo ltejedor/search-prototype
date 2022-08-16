@@ -5,6 +5,7 @@ import raf from 'raf'
 import { FaPlay } from "react-icons/fa";
 import { FaPause } from "react-icons/fa";
 import { BiLoader } from "react-icons/bi";
+import {BiReset} from "react-icons/bi";
 
 class Player extends React.Component {
   constructor (props) {
@@ -33,6 +34,7 @@ class Player extends React.Component {
     this.handleMouseUpSeek = this.handleMouseUpSeek.bind(this)
     this.handleSeekingChange = this.handleSeekingChange.bind(this)
     this.handleRate = this.handleRate.bind(this)
+    this.resetRecording = this.resetRecording.bind(this)
   }
   componentWillUnmount () {
     this.clearRAF()
@@ -42,6 +44,14 @@ class Player extends React.Component {
     this.setState({
       playing: !this.state.playing
     })
+  }
+
+  resetRecording () {
+    this.setState({
+      playing: false
+    })
+    this.player.seek(this.props.startTime)
+    this.renderSeekPos()
   }
 
   handleOnLoad () {
@@ -88,6 +98,7 @@ class Player extends React.Component {
 
   handleMouseDownSeek () {
     this.setState({
+      playing: false,
       isSeeking: true
     })
   }
@@ -145,9 +156,14 @@ class Player extends React.Component {
         />
 
         {this.state.loaded &&
-        <Button onClick={this.handleToggle}>
-          {(this.state.playing) ? <FaPause /> : <FaPlay />}
-        </Button>
+        <div>
+          <Button onClick={this.handleToggle}>
+            {(this.state.playing) ? <FaPause /> : <FaPlay />}
+          </Button>
+          <Button onClick={this.resetRecording}>
+            <BiReset/>
+          </Button>
+        </div>
         }
 
         {!this.state.loaded &&
@@ -157,7 +173,7 @@ class Player extends React.Component {
         }
 
         {this.state.loaded &&
-        <p class="timeline">
+        <p className="timeline">
           {new Date(this.state.seek.toFixed(0) * 1000).toISOString().substr(11, 8)}
           {' / '}
           {(this.state.duration) ? new Date(this.state.duration.toFixed(0) * 1000).toISOString().substr(11, 8) : 'NaN'}

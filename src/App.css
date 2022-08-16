@@ -38,7 +38,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: #15131D;
-  padding: 20px 20px 10px;
+  padding: 15px 20px;
   text-align: left;
 }
 
@@ -47,6 +47,10 @@
 }
 
 .App-header h2 span {
+  cursor: pointer;
+}
+
+.App-header h2 .tagline {
   font-weight: 400;
 }
 
