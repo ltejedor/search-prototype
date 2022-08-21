@@ -475,6 +475,7 @@ input[type="submit"]:hover {
 
     .lecture-content.individual-view .speaker, .lecture-content.individual-view .content {
       display: block;
+      width: 100%;
     }
 
     .lecture-content {
