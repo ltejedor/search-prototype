@@ -432,10 +432,7 @@ input[type="submit"]:hover {
   }
 }
 
-@media screen and (max-width: 400px){
-  .lectures .answer {
-    width: 100%;
-  }
+@media screen and (max-width: 980px){
 
   .header-description h2 {
       width: 100%;
@@ -483,6 +480,12 @@ input[type="submit"]:hover {
     .lecture-content {
       padding: 25px;
     }
+}
+
+@media screen and (max-width: 450px){
+  .lectures .answer {
+    width: 100%;
+  }
 }
 
 .answer .true.individual-view {
