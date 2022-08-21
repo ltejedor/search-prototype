@@ -26,7 +26,7 @@ const Search = (props) => {
     <form className="search">
       <input
         id="search-input"
-        placeholder="Search keywords: self-knowing, fear, clarity"
+        placeholder="Search keywords: mindfulness, technology, suffering"
         value={searchValue}
         onChange={handleSearchInputChanges}
         type="text"

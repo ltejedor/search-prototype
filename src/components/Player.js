@@ -152,6 +152,7 @@ class Player extends React.Component {
           mute={this.state.mute}
           volume={this.state.volume}
           seek={this.state.seek}
+          rate={this.state.rate}
           ref={(ref) => (this.player = ref)}
         />
 

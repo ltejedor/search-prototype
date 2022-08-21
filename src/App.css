@@ -32,14 +32,65 @@
 }
 
 .App-header {
-  background-color: #fff;
+  background-color: #15131D;
   display: flex;
   flex-direction: column;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: #15131D;
+  color: #fff;
   padding: 15px 20px;
   text-align: left;
+}
+
+.header-description {
+  color: #fff;
+  width: 80%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.header-description.false {
+  display: none;
+}
+
+.header-description h2 {
+  margin-top: 75px;
+  font-size: 2em;
+  font-family: "Lora", serif;
+  width: 60%
+}
+
+.tabs {
+  text-align: left;
+  width: 80%;
+  margin: 0 auto;
+  display: inline-block;
+}
+
+.tabs .tab {
+  display: inline-block;
+  width: 150px;
+  background-color: #EEEBEB;
+  text-align: center;
+  margin-right: 15px;
+  cursor: pointer;
+  border-radius: 15px 15px 0 0;
+  opacity: .75;
+}
+
+.tabs .tab.featured.true, .tabs .tab.all.false {
+  background-color: #fff;
+  font-weight: 800;
+  opacity: 1;
+}
+
+.header-description .search {
+  font-family: "Lora", serif;
+  width: 75%
+}
+
+.header-description p {
+  width: 75%;
 }
 
 .App-header h2 {
@@ -73,30 +124,66 @@
   min-width: 100%;
 }
 
-/* new css for movie component */
+.false-group-size .answer-container {
+  width: 70%;
+  display: inline-block;
+}
+
+.false-group-size .neighbors-container {
+  color: white;
+  width: 26%;
+  margin-left: 3%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.neighbors-container ul {
+  padding-left: 0;
+}
+
+.neighbor {
+  background: linear-gradient(153.23deg, #B59FDC 16.76%, #E7C590 76.84%);
+  border-radius: 15px;
+  list-style: none;
+  margin: 15px 0;
+  font-size: 1.05em;
+  color: #15131D;
+  cursor: pointer;
+  font-family: "Lora", serif;
+  padding: 15px 20px;
+}
+
+.neighbor:hover {
+  text-decoration: underline;
+}
 
 * {
   box-sizing: border-box;
 }
 
 .Container {
-  background-color: #15131D;
+  display: inline-block;
+  background-color: #fff;
   height: 100%;
   text-align: left;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
 }
 
+.Container.false {
+  background-color: #15131D;
+}
+
+.Container.false .backBtn {
+  color: #fff;
+}
+
 .lectures {
-  width: 100%;
+  padding: 15px 8%;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-}
-
-.false-group-size .title-display .open-icon{
-  display: none;
 }
 
 .answer.false-group-size .title-display{
@@ -129,13 +216,19 @@
 }
 
 .answer.false-group-size h2 {
+  margin-top: 0;
   color: #fff;
   cursor: default;
   font-size: 1.8em;
 }
 
+.answer.false-group-size:hover h2{
+  text-decoration: none;
+}
+
 .answer.false-group-size .full-control{
   border-radius: 15px;
+  background-color: #fff;
 }
 
 .lecture-content.individual-view li {
@@ -189,26 +282,36 @@
   font-size: 10px;
 }
 
-.title-display .open-icon {
-  position: absolute;
-  right: 10px;
-  opacity: 0;
-  transition: opacity .2s ease-out;
+.title-display:hover h2 {
+    text-decoration: underline;
 }
 
-.title-display:hover .open-icon {
-  opacity: 1;
+.title-display p {
+  font-size: .7em;
+  margin: 4px 0;
 }
 
-.title-display .open-icon svg {
-  width: 25px;
-  height: 25px;
+.title-display p.bold {
+  font-size: .8em;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.false-group-size .title-display p {
+  font-size: .8em;
+  margin: 6px 0;
+}
+
+.false-group-size .title-display p.bold {
+  font-size: .9em;
 }
 
 .answer .title-display {
   background: linear-gradient(153.23deg, #B59FDC 16.76%, #E7C590 76.84%);
   border-radius: 15px 15px 0 0;
-  padding: 10px 25px 3px;
+  padding: 10px 25px;
   position: relative;
   cursor: pointer;
 }
@@ -220,12 +323,12 @@
 }
 
 .search {
-  padding: 50px 0;
+  padding: 15px 0 50px;
   width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: left;
   margin-top: 10px;
 }
 
@@ -239,14 +342,19 @@
   width: 100%;
 }
 
+.messages {
+  padding: 5px 10% 0;
+}
+
 .answer h2 {
+  font-size: 1.2em;
   color: #15131D;
   cursor: pointer;
   font-family: "Lora", serif;
 }
 
 .answer .full-control {
-  background-color: #fff;
+  background-color: #EEEBEB;;
   border-radius: 0 0 15px 15px;
   position: relative;
   padding-bottom: 15px;
@@ -291,7 +399,7 @@ input[type="submit"]:hover {
 }
 
 
-@media screen and (min-width: 2000px){
+@media screen and (min-width: 1300px){
   .lectures .answer {
     width: 25%;
   }
@@ -330,4 +438,9 @@ input[type="submit"]:hover {
 
 .answer .false.group-view {
   display: none;
+}
+
+.lecture-content.individual-view .Break_line {
+  opacity:0;
+  cursor: default;
 }
