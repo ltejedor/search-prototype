@@ -43,7 +43,14 @@ const Lecture = (props) => {
   //Chrome: 1:34:53
   //Firefox 1:35:19
 
+  //example 3 - self knowing 3
+  //chrome: 1:11:15
+  //Firefox: 
+
   //Dana, The Flowering Of Generosity firefox and chrome are synced ;_;
+
+  //Lecture: In Praise Of Inquiry
+  //lmfao they're also synced kill me
 
   let dateFormatted = new Date(props.lecture.date).toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"});
   dateFormatted = String(dateFormatted);
