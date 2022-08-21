@@ -484,6 +484,14 @@ input[type="submit"]:hover {
 }
 
 @media screen and (max-width: 450px){
+  .messages {
+    padding: 5px 3% 0;
+  }
+
+  .lectures {
+    padding: 15px 1%;
+  }
+
   .lectures .answer {
     width: 100%;
   }
