@@ -432,6 +432,59 @@ input[type="submit"]:hover {
   }
 }
 
+@media screen and (max-width: 400px){
+  .lectures .answer {
+    width: 100%;
+  }
+
+  .header-description h2 {
+      width: 100%;
+      font-size: 1.5em;
+    }
+
+    .header-description p {
+      width: 100%;
+    }
+
+    .header-description .search {
+      width: 100%;
+    }
+
+    .search > input[type="text"] {
+      font-size: .75em;
+      width: 70%;
+    }
+
+    input[type="submit"]{
+      width: 28%;
+    }
+
+    .tabs .tab {
+      width: 95px;
+      font-size: .9em;
+    }
+
+    .false-group-size .answer-container {
+      width: 100%;
+    }
+
+    .false-group-size .neighbors-container {
+      width: 100%;
+    }
+
+    .answer.false-group-size h2 {
+      font-size: 1.5em
+    }
+
+    .lecture-content.individual-view .speaker, .lecture-content.individual-view .content {
+      display: block;
+    }
+
+    .lecture-content {
+      padding: 25px;
+    }
+}
+
 .answer .true.individual-view {
   display: none;
 }
